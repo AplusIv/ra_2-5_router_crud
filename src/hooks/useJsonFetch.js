@@ -57,7 +57,7 @@ const useJsonFetch = (url, opts, method, postState=null) => {
       console.log('cleanup');
       return abortController.abort();
     }
-  }, [opts, url]);
+  }, [method, opts, postState, url]);
 
   return [data, loading, error];
 }

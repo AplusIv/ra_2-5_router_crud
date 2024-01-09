@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+// import React, { useContext, useState } from 'react'
 // import EditPostContext from '../context/EditPostContext';
 
 const EditPost = ({ post, commonProps: {postState, onChange, onSubmit, onClick} }) => {

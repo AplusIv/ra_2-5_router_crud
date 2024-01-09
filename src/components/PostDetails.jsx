@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router'
 import useJsonFetch from '../hooks/useJsonFetch';
 import badSanta from '../img/bad-santa.jpg';
 import Button from './Button';
-import EditPost from './EditPost';
 
 
 const PostDetails = ({commonProps: {postState, setPostState, onChange, onSubmit, onClick, onDelete}}) => {
@@ -15,7 +14,7 @@ const PostDetails = ({commonProps: {postState, setPostState, onChange, onSubmit,
   const { parId } = useParams();
   const url = 'https://router-crud-backend-eixl.onrender.com';
 
-  const [data, loading, error] = useJsonFetch('https://router-crud-backend-eixl.onrender.com', `/posts/${parId}`, 'GET');
+  const [data, loading] = useJsonFetch('https://router-crud-backend-eixl.onrender.com', `/posts/${parId}`, 'GET');
 
   // const [editedData, setEditedData] = useState({
   //   content: data.post.content,
@@ -85,6 +84,8 @@ const PostDetails = ({commonProps: {postState, setPostState, onChange, onSubmit,
 
       {editPost && (
     <div className="edit-form-container">Редактировать пост
+      <img className='post-author-img' src={badSanta} alt='post-author'/>
+      <div className='post-author'>Bad Santa</div>  
       <form id='add-new-note-form' className='form' onSubmit={onSubmit2}>
         <button className='delete-note' type='button' onClick={() => {
             setEditForm(false);

@@ -19,7 +19,7 @@ function App() {
   const url = 'https://router-crud-backend-eixl.onrender.com';
   const opts = ['/posts', '/posts/new'];  
   
-  const [data, loading, error] = useJsonFetch(url, opts[0], 'GET');
+  const [data] = useJsonFetch(url, opts[0], 'GET');
   // const [data, loading, error] = useJsonFetch(url, opts[1], 'POST');
 
   const navigate = useNavigate();
@@ -29,7 +29,9 @@ function App() {
     id: '',
     content: '',
   });
-  const [needDataLoading, setNeedDataLoading] = useState(false); // Необходимость запуска эффекта
+  
+  
+  // const [needDataLoading, setNeedDataLoading] = useState(false); // Необходимость запуска эффекта
 
   const sendNote = async (noteState) => {
     try {
@@ -72,7 +74,7 @@ function App() {
     console.log('Закроем и удалим');
 
     navigate('/', {replace: true});
-    setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
+    // setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
   }
 
   const handleChange = (event) => {
@@ -86,7 +88,7 @@ function App() {
 
     sendNote(noteState); // отправка новых данных на сервер
 
-    setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
+    // setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
 
     // Очистка textarea
     setNoteState((prevNoteStateValue) => ({...prevNoteStateValue, content: '', id: ''}));
@@ -97,12 +99,12 @@ function App() {
     // deleteNote(id);
     console.log('Закроем');
     navigate('/', {replace: true});
-    setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
+    // setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
   }
 
-  const refreshNotes = () => {
-    setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
-  }
+  // const refreshNotes = () => {
+  //   setNeedDataLoading(true); // меняю состояние needDataLoading, заставляю отработать useEffect
+  // }
 
   const commonProps = {
     postState: noteState,
