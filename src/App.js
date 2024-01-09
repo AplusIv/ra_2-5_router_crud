@@ -126,7 +126,7 @@ function App() {
         <Route path='/posts/new' element={<NewPost state={noteState} onChange={handleChange} onSubmit={handleSubmit} onClick={handleClick}/>}/>
         {/* <Route path='/posts/:parId' element={<PostDetails onClick={handleClick} onDelete={handleDelete}/>}/> */}
         <Route path='/posts/:parId' element={<PostDetails commonProps={commonProps}/>}/>
-        <Route path='*' element={<Page404/>}></Route>
+        <Route path='/*' element={<Page404/>}></Route>
       </Routes>
 
       {/* <EditPostContext.Provider value={{noteState, setNoteState, handleChange, handleClick, handleSubmit}}>
