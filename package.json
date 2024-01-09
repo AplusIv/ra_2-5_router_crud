@@ -37,5 +37,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://aplusiv.github.io/ra_2-5_router_crud/"
+  "homepage": "https://aplusiv.github.io/ra_2-5_router_crud/",
+  "devDependencies": {
+    "dayjs": "^1.11.10",
+    "nanoid": "^5.0.4"
+  }
 }
