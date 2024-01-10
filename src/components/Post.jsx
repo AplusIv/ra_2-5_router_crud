@@ -1,4 +1,3 @@
-import React from 'react'
 import badSanta from '../img/bad-santa.jpg'
 import { Link } from 'react-router-dom'
 import dayjs from 'dayjs';

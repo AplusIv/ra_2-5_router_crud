@@ -1,12 +1,11 @@
 import React from 'react'
-// import Button from './Button'
+import Button from './Button'
 
 const NewPost = ({state, onChange, onSubmit, onClick}) => {
   return (
     <form id='add-new-note-form' className='form' onSubmit={onSubmit}>
-      <button className='delete-note' type='button' onClick={onClick}>{'\u2716'}</button>
-      {/* <Button>{'\u2716'}</Button> */}
-      <label>New Post
+      <Button onClick={onClick} type='btn-outline-red'>{'\u2716'}</Button>
+      <label>
         <textarea 
         className='textarea' 
         name='content' 
@@ -18,8 +17,7 @@ const NewPost = ({state, onChange, onSubmit, onClick}) => {
         required
         />
       </label>
-      <button className='btn' type='submit'>{'\u27A4'}</button>
-      {/* <Button>{'\u27A4'}</Button> */}
+      <button className='btn btn-outline-primary' type='submit'>{'\u27A4'}</button>
     </form>
   )
 }
